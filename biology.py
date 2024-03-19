@@ -23,7 +23,13 @@ if skeleton_type == "internal":
             print("Type of animal: Mammal")
 
     else: 
-        pass # Implement this section by checking on automarker on the type of questions you need to ask for this section when the user chooses "outside the body"
+        location = input("It lives (in water/near water)?\n")
+
+        if location == "near water":
+            print("Type of animal: Amaphibian")
+
+        else:
+            print("Type of animal: Fish")
 
 else:
     print("Type of animal: Arthropod")
