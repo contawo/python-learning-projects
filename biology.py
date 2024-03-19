@@ -26,7 +26,7 @@ if skeleton_type == "internal":
         location = input("It lives (in water/near water)?\n")
 
         if location == "near water":
-            print("Type of animal: Amaphibian")
+            print("Type of animal: Amphibian")
 
         else:
             print("Type of animal: Fish")
