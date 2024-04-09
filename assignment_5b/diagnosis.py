@@ -42,17 +42,17 @@ else:
 	else:
 		has_headache = input("Do you have a headache?\n")
 		if has_headache == "yes":
-			has_rash = input("Do you have rash?\n")
+			has_rash = input("Do you have a rash?\n")
 			if has_rash == "yes":
 				has_fatigue = input("Are you feeling fatigued?\n")
 				if has_fatigue == "yes":
-					print("Based on your symptoms, you may have one of the following conditions: migrane, meningitis, brain tumor")
+					print("Based on your symptoms, you may have one of the following conditions: migraine, meningitis, brain tumor")
 				else:
 					print("Sorry, we could not diagnose your condition based on the information provided.")
 			else:
 				print("Sorry, we could not diagnose your condition based on the information provided.")
 		else:
-			has_rash = input("Do you have rash?\n")
+			has_rash = input("Do you have a rash?\n")
 			if has_rash == "yes":
 				has_fatigue = input("Are you feeling fatigued?\n")
 				if has_fatigue == "yes":
