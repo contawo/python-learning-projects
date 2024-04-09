@@ -1,8 +1,8 @@
 import math
 
-a = eval(input("A: \n"))
-b = eval(input("B: \n"))
-c = eval(input("C: \n"))
+a = eval(input("Enter the length of the first side:\n"))
+b = eval(input("Enter the length of the second side:\n"))
+c = eval(input("Enter the length of the third side:\n"))
 
 s = (a + b + c) / 2
 formula = s * (s - a) * (s - b) * (s - c)
@@ -14,7 +14,7 @@ def validate_number(num):
 	else: return num
 
 if formula <= 0:
-	print("Not a triangle")
+	print("Error: The input does not describe a triangle.")
 else:
 	area = math.sqrt(formula)
 	rounded_area = float("%.2f" % (area))
