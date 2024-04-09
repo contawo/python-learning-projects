@@ -1,8 +1,8 @@
 import math
 
-a = eval(input("Enter the length of the first side:\n"))
-b = eval(input("Enter the length of the second side:\n"))
-c = eval(input("Enter the length of the third side:\n"))
+a = eval(input("Enter the length of the first side: "))
+b = eval(input("Enter the length of the second side: "))
+c = eval(input("Enter the length of the third side: "))
 
 s = (a + b + c) / 2
 formula = s * (s - a) * (s - b) * (s - c)
