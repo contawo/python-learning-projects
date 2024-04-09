@@ -11,6 +11,7 @@ def validate_number(num):
 	validate = isinstance(num, int)
 	if validate == True:
 		return f"{num}.0"
+	else: return num
 
 if formula <= 0:
 	print("Not a triangle")
