@@ -13,7 +13,7 @@ if has_fever == "yes":
 			if has_rash == "yes":
 				has_fatigue = input("Are you feeling fatigued?\n")
 				if has_fatigue == "yes":
-					print("Based on your symptoms, you may have one of the following conditions: influenza, malaria, typhoid")
+					print("Based on your symptoms, you may have one of the following conditions:  influenza, malaria, typhoid")
 				else:
 					print("Sorry, we could not diagnose your condition based on the information provided.")
 			else:
@@ -32,7 +32,7 @@ else:
 			if has_rash == "yes":
 				has_fatigue = input("Are you feeling fatigued?\n")
 				if has_fatigue == "yes":
-					print("Based on your symptoms, you may have one of the following conditions: pneumonia, tuberculosis, bronchitis")
+					print("Based on your symptoms, you may have one of the following conditions:  pneumonia, tuberculosis, bronchitis")
 				else:
 					print("Sorry, we could not diagnose your condition based on the information provided.")
 			else:
@@ -46,7 +46,7 @@ else:
 			if has_rash == "yes":
 				has_fatigue = input("Are you feeling fatigued?\n")
 				if has_fatigue == "yes":
-					print("Based on your symptoms, you may have one of the following conditions: migraine, meningitis, brain tumor")
+					print("Based on your symptoms, you may have one of the following conditions:  migraine, meningitis, brain tumor")
 				else:
 					print("Sorry, we could not diagnose your condition based on the information provided.")
 			else:
@@ -56,12 +56,12 @@ else:
 			if has_rash == "yes":
 				has_fatigue = input("Are you feeling fatigued?\n")
 				if has_fatigue == "yes":
-					print("Based on your symptoms, you may have one of the following conditions: measles, chickenpox, eczema")
+					print("Based on your symptoms, you may have one of the following conditions:  measles, chickenpox, eczema")
 				else:
 					print("Sorry, we could not diagnose your condition based on the information provided.")
 			else:
 				has_fatigue = input("Are you feeling fatigued?\n")
 				if has_fatigue == "yes":
-					print("Based on your symptoms, you may have one of the following conditions: anemia, chronic fatigue syndrome, depression")
+					print("Based on your symptoms, you may have one of the following conditions:  anemia, chronic fatigue syndrome, depression")
 				else:
 					print("Sorry, we could not diagnose your condition based on the information provided.")
