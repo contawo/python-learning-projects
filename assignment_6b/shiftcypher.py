@@ -12,7 +12,7 @@ while index < len(message):
 	else:
 		position = 0 # Keep track of the position of each char in message on the alphabets
 		for k in range(0, len(alphabets)):
-			if message[index] == alphabets[k]:
+			if message[index].lower() == alphabets[k]:
 				position = k
 
 		cypher_position = position + key # Postion of the cypher_char

@@ -1,25 +1,22 @@
 string = input("Enter the full string:\n")
 subsequence = input("Enter the subsequence to check for:\n")
 
-position = 0 # Keeps track of the postion of the previous subsequence string on the full string
-sub_index = 0 # Used to iterate through the loop
 success = True # Validate if substring is a subsequence
 
-while sub_index < len(subsequence):
-	new_position = 0 # Keeps track of the postion of the next subsequence string on the full string
+index = 0
+find = 0
 
-	# Checks for the position of each char of the substring in the original string
-	for i in range(0, len(string)):
-		if string[i] == subsequence[sub_index]:
-			new_position = i
+while index < len(subsequence):
+	validate = string.lower().find(subsequence.lower()[index])
 
-	# If the next string in the subsequence is at a position less than the previous string in the subsequence, break
-	if new_position < position:
+	if validate == -1:
 		success = False
 		break
-	
-	position = new_position
-	sub_index = sub_index + 1
+
+	find = validate
+	string = string[find: len(string)]
+	print("Check:", string)
+	index = index + 1
 
 # Displaying to the user
 if success == True:
