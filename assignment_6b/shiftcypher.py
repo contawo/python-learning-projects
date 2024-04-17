@@ -17,7 +17,7 @@ while index < len(message):
 
 		cypher_position = position + key # Postion of the cypher_char
 
-		if cypher_position > 26:
+		if cypher_position >= 26:
 			new_position = cypher_position - 26
 
 			# Update the cypher message
