@@ -2,6 +2,7 @@ import math
 
 
 def day_of_week(day, month, year):
+    # Zeller’s congruence expects the month values to be in the range 3 to 14 (where March is 3, April is 4, and so on
     if month < 3:
         month += 12
         year -= 1
@@ -86,8 +87,10 @@ def main():
         
         if w == 1:
             spaces = 7 - len(days)
-            for space in range(0, spaces + 1):
+            while spaces >= 0:
                 print("  ", end=" ")
+                spaces = spaces - 1
+                
             for day in days:
                 print(f" {day}", end=" ")
         else:
