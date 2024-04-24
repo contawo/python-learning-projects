@@ -21,7 +21,7 @@ def month_num(month_name):
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
     for i in range(0, len(months)):
-        if month_name == months[i]:
+        if month_name.lower() == months[i].lower():
             return i + 1
 
 def num_days_in(month_num, year):
@@ -54,19 +54,22 @@ def week(week_num, start_day, days_in_month):
     days_left = days_in_month
     current_day = 1
     
-    output = ""
+    output = []
     
     for i in range(week_num):
-        output = ""
+        output = []
         
         for i in range(weekdays):
-            output = output + f"{current_day} "
+            if current_day <= 9:
+                output.append(f" {current_day} ")
+            else:
+                output.append(f"{current_day} ")
             current_day = current_day + 1
             
         days_left = days_in_month - current_day
         weekdays = 7 if (days_left >= 7) else (days_left + 1)
         
-    return output
+    return "".join(output)
 
 def main():
     month = input("Enter month:\n")
@@ -78,30 +81,26 @@ def main():
     
     start_day = day_of_week(1, month_number, year)
     
-    print(month)
+    print(month.title())
     print("Mo Tu We Th Fr Sa Su")
     
     for w in range(1, week_number + 1):
         weeks_output = week(w, start_day, month_days)
-        days = weeks_output.split(" ")
-        
         if w == 1:
-            spaces = 7 - len(days)
-            while spaces >= 0:
+            week_days = weeks_output.split("  ")
+            spaces = 7 - len(week_days)
+            
+            while spaces > 0:
                 print("  ", end=" ")
                 spaces = spaces - 1
+            
+            for w_d in week_days:
+                num = int(w_d.replace(" ", ""))
+                print(f" {num}", end=" ")
                 
-            for day in days:
-                print(f" {day}", end=" ")
+            print()
         else:
-            for day in days:
-                if day != '':    
-                    day_number = int(day)
-                    if day_number <= 9:
-                        print(f" {day_number}", end=" ")
-                    else:
-                        print(day_number, end=" ")
-        print()
+            print(weeks_output)
     
 if __name__=='__main__':
     main()
