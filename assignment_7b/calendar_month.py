@@ -53,14 +53,19 @@ def week(week_num, start_day, days_in_month):
     weekdays = 7 - (start_day - 1)
     days_left = days_in_month
     current_day = 1
+    spaces = 7 - (weekdays)
     
     output = []
     
     for i in range(week_num):
         output = []
         
-        for i in range(weekdays):
+        for j in range(weekdays):
             if current_day <= 9:
+                if i == 0:
+                    while spaces >= 0:
+                        output.append("  ")
+                        spaces = spaces - 1
                 output.append(f" {current_day} ")
             else:
                 output.append(f"{current_day} ")
@@ -68,6 +73,7 @@ def week(week_num, start_day, days_in_month):
             
         days_left = days_in_month - current_day
         weekdays = 7 if (days_left >= 7) else (days_left + 1)
+        spaces = 7 - weekdays
         
     return "".join(output)
 
@@ -86,21 +92,7 @@ def main():
     
     for w in range(1, week_number + 1):
         weeks_output = week(w, start_day, month_days)
-        if w == 1:
-            week_days = weeks_output.split("  ")
-            spaces = 7 - len(week_days)
-            
-            while spaces > 0:
-                print("  ", end=" ")
-                spaces = spaces - 1
-            
-            for w_d in week_days:
-                num = int(w_d.replace(" ", ""))
-                print(f" {num}", end=" ")
-                
-            print()
-        else:
-            print(weeks_output)
+        print(weeks_output)
     
 if __name__=='__main__':
     main()
