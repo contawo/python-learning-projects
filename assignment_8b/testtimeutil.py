@@ -12,6 +12,7 @@ False
 False
 >>> validate("9:23 p.m.")
 True
+
 """
 
 import doctest as dt
