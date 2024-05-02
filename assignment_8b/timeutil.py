@@ -4,6 +4,21 @@
 import trace
 
 def validate(time):
+    """
+    >>> validate("12")
+    False
+    >>> validate("hh:00")
+    False
+    >>> validate("111:00")
+    False
+    >>> validate("11:00 pm")
+    False
+    >>> validate("11:m p.m.")
+    False
+    >>> validate("9:23 p.m.")
+    True
+
+    """
     time=time.strip()
     colon = time.find(':')
     if colon<1:
