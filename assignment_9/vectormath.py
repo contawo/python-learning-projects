@@ -45,6 +45,7 @@ def cross_product(vector1, vector2):
     product = np.empty(3, dtype=float)
     
     product[0] = np.multiply(vector1[1], vector2[2]) - np.multiply(vector1[2], vector2[1])
+    # According to the rules of cross product, we multiply the middle (in this case) with -1
     product[1] = np.multiply(-1, (np.multiply(vector1[0], vector2[2]) - np.multiply(vector1[2], vector2[0])))
     product[2] = np.multiply(vector1[0], vector2[1]) - np.multiply(vector1[1], vector2[0])
     
@@ -54,11 +55,12 @@ def cross_product(vector1, vector2):
 def convert_text_to_vector(text):
     return np.array(list(map(int, text.split())))
 
+# Formatting the vector to present it in a nicer way
 def present_vector_as_string(vector):
     output = ""
     
     for i in range(0, len(vector)):
-        if i == (len(vector) - 1):
+        if i == (len(vector) - 1): # For the last item on the vector, I do not want to add a comma and space
             output = output + str(int(vector[i]))
         else:
             output = output + str(int(vector[i])) + ", "
@@ -82,10 +84,10 @@ def main():
             break
         
         elif choice == "1":
-            vector_input = input("Enter space-separated components of a vector:\n")
+            vector_input = input("Enter the components of the vector separated by spaces:\n")
             vector = convert_text_to_vector(vector_input)
             magnitude_answer = magnitude(vector)
-            print(f"The magnitude is: {magnitude_answer}")
+            print(f"The magnitude is: %.1f" % (magnitude_answer))
             
         
         elif choice == "2":
@@ -109,7 +111,7 @@ def main():
             vector = convert_text_to_vector(vector_input)
             
             scalar_multiply_results = scalar_multiply(scalar, vector)
-            print(f"Scalar multiple of the vectors is: {present_vector_as_string(scalar_multiply_results)}")
+            print(f"Scalar multiplication of the vector is: {present_vector_as_string(scalar_multiply_results)}")
         
         elif choice == "4":
             vector1_input = input("Enter the components of the first vector separated by spaces:\n")
@@ -118,8 +120,11 @@ def main():
             vector_1 = convert_text_to_vector(vector1_input)
             vector_2 = convert_text_to_vector(vector2_input)
             
-            dot_product_results = dot_product(vector_1, vector_2)
-            print(f"Dot product of the vectors is: {dot_product_results}")
+            if len(vector_1) == len(vector_2):
+                dot_product_results = dot_product(vector_1, vector_2)
+                print(f"Dot product of the vectors is: {dot_product_results}")
+            else:
+                print("Error: Vectors must have the same length.")
         
         elif choice == "5":
             vector1_input = input("Enter the components of the first 3-dimensional vector separated by spaces:\n")
@@ -128,8 +133,11 @@ def main():
             vector_1 = convert_text_to_vector(vector1_input)
             vector_2 = convert_text_to_vector(vector2_input)
             
-            cross_product_results = cross_product(vector_1, vector_2)
-            print(f"Cross product of the vectors is: {present_vector_as_string(cross_product_results)}")
+            if len(vector_1) == len(vector_2):
+                cross_product_results = cross_product(vector_1, vector_2)
+                print(f"Cross product of the vectors is: {present_vector_as_string(cross_product_results)}")
+            else:
+                print("Error: Vectors must have the same length and 3-dimensional.")
         
         else:
             print("Invalid choice. Please choose a valid option.")
