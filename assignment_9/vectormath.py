@@ -87,7 +87,7 @@ def main():
             vector_input = input("Enter the components of the vector separated by spaces:\n")
             vector = convert_text_to_vector(vector_input)
             magnitude_answer = magnitude(vector)
-            print(f"The magnitude is: %.1f" % (magnitude_answer))
+            print(f"Magnitude of the vector is: %.1f" % (magnitude_answer))
             
         
         elif choice == "2":
